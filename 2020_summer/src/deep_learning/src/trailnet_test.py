@@ -13,12 +13,12 @@ import torchvision
 
 #load image from folder and set foldername as label
 train_data = datasets.ImageFolder(
-    '/home/austin/2020_summer/src/deep_learning/data/Lane_data/train_data',
+    '/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data',
     transform = transforms.Compose([transforms.ToTensor()])                         
 )
 
 test_data = datasets.ImageFolder(
-    '/home/austin/2020_summer/src/deep_learning/data/Lane_data/test_data',
+    '/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data',
     transform = transforms.Compose([transforms.ToTensor()])                         
 )
 
