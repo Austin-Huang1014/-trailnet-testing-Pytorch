@@ -1,0 +1,8 @@
+prefix=/home/austin/2020_summer/install
+
+Name: deep_learning
+Description: Description of deep_learning
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
