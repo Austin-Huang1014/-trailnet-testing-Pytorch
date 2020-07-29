@@ -13,21 +13,15 @@ import torchvision
 
 #load image from folder and set foldername as label
 train_data = datasets.ImageFolder(
-    '/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data',
+    '/home/austin/Test/src/joy_control/data/D',
     transform = transforms.Compose([transforms.ToTensor()])                         
 )
 
 test_data = datasets.ImageFolder(
-    '/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data',
+    '/home/austin/Test/src/joy_control/data/D',
     transform = transforms.Compose([transforms.ToTensor()])                         
 )
 
-#print(train_data.class_to_idx)
-#print(train_data[0][0][0].size())
-#create train and test dataset
-#train_size = int(0.7 * len(train_data))
-#test_size = len(train_data) - train_size
-#train_data, test_data = torch.utils.data.random_split(train_data, [train_size, test_size])
 train_loader = torch.utils.data.DataLoader(train_data, batch_size=20,shuffle= True)
 test_loader = torch.utils.data.DataLoader(test_data, batch_size=20,shuffle=True)
 
@@ -76,7 +70,7 @@ class CNN_Model(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2),                
         )
         self.fc1 = nn.Linear(34048, 200)
-        self.fc2 = nn.Linear(200, 3)
+        self.fc2 = nn.Linear(200, 18)
     
 
     def forward(self, x):
@@ -119,12 +113,13 @@ for epoch in range(10): # loop over the dataset multiple times
             running_loss = 0.0
 
 print('Finished Training')
+torch.save(net.state_dict(),'/home/austin/Test/src/joy_control/src/yb_lane.pth')
 
 #Accuracy present
 print('Accuracy testing...')
 correct = 0
 total = 0
-for data in test_loader:
+for data in train_loader:
     images, labels = data
     images = images.cuda()
     labels = labels.cuda()

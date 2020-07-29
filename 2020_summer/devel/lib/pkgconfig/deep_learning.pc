@@ -1,4 +1,4 @@
-prefix=/home/austin/2020_summer/devel
+prefix=/home/austin/trailnet-testing-Pytorch/2020_summer/devel
 
 Name: deep_learning
 Description: Description of deep_learning

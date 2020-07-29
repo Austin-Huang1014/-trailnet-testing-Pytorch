@@ -7,8 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/austin/2020_summer/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/austin/2020_summer/devel/lib:$LD_LIBRARY_PATH"
-export PWD="/home/austin/2020_summer/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/austin/2020_summer/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/austin/2020_summer/src:$ROS_PACKAGE_PATH"
+export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
+export PWD="/home/austin/trailnet-testing-Pytorch/2020_summer/build"
+export ROS_PACKAGE_PATH="/home/austin/trailnet-testing-Pytorch/2020_summer/src:/opt/ros/melodic/share"

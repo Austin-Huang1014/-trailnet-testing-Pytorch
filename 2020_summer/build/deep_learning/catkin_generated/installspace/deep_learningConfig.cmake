@@ -67,14 +67,14 @@ set(deep_learning_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(deep_learning_SOURCE_PREFIX /home/austin/2020_summer/src/deep_learning)
-  set(deep_learning_DEVEL_PREFIX /home/austin/2020_summer/devel)
+  set(deep_learning_SOURCE_PREFIX /home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning)
+  set(deep_learning_DEVEL_PREFIX /home/austin/trailnet-testing-Pytorch/2020_summer/devel)
   set(deep_learning_INSTALL_PREFIX "")
   set(deep_learning_PREFIX ${deep_learning_DEVEL_PREFIX})
 else()
   set(deep_learning_SOURCE_PREFIX "")
   set(deep_learning_DEVEL_PREFIX "")
-  set(deep_learning_INSTALL_PREFIX /home/austin/2020_summer/install)
+  set(deep_learning_INSTALL_PREFIX /home/austin/trailnet-testing-Pytorch/2020_summer/install)
   set(deep_learning_PREFIX ${deep_learning_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/austin/2020_summer/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/austin/trailnet-testing-Pytorch/2020_summer/install/lib;/home/austin/trailnet-testing-Pytorch/2020_summer/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

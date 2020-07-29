@@ -1,8 +1,8 @@
-# Install script for directory: /home/austin/2020_summer/src/deep_learning
+# Install script for directory: /home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/austin/2020_summer/install")
+  set(CMAKE_INSTALL_PREFIX "/home/austin/trailnet-testing-Pytorch/2020_summer/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/austin/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learning.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learning.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deep_learning/cmake" TYPE FILE FILES
-    "/home/austin/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learningConfig.cmake"
-    "/home/austin/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learningConfig-version.cmake"
+    "/home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learningConfig.cmake"
+    "/home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning/catkin_generated/installspace/deep_learningConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deep_learning" TYPE FILE FILES "/home/austin/2020_summer/src/deep_learning/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/deep_learning" TYPE FILE FILES "/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/package.xml")
 endif()
 
