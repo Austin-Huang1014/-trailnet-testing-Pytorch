@@ -7,6 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PKG_CONFIG_PATH="/opt/ros/melodic/lib/pkgconfig"
 export PWD="/home/austin/trailnet-testing-Pytorch/2020_summer/build"
-export ROS_PACKAGE_PATH="/home/austin/trailnet-testing-Pytorch/2020_summer/src:/opt/ros/melodic/share"

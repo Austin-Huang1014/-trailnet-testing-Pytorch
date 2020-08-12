@@ -1,0 +1,2 @@
+line_detect
+-DCATKIN_DEVEL_PREFIX=/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/devel -DCMAKE_INSTALL_PREFIX=/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/install -G Unix Makefiles
