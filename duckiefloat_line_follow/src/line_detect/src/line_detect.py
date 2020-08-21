@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import os
 
 #img = cv2.imread('/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data/train_data/S/S_degree_30_0236.jpg',1)
 i = 0
@@ -12,7 +13,14 @@ s = None
 #img = cv2.imread('/home/austin/data/float_1/119.jpg')
 #img = cv2.imread('/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data/train_data/R/R_degree_30_0275.jpg',1)
 while True:
-    img = cv2.imread('/home/austin/data/float_1/'+str(i)+'.jpg')
+    while True:
+        if os.path.isfile('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/float_2/'+str(i)+'.jpg'):
+            #print('1')
+            break
+        else:
+            i += 1
+            #print('2')
+    img = cv2.imread('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/float_2/'+str(i)+'.jpg')
     #----------hsv_trans----------------------#
     Img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
@@ -28,7 +36,7 @@ while True:
     Img = cv2.dilate(Img,kernel)
 
     #----------find_contour-------------#
-    contours, hierarchy = cv2.findContours(Img.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    _, contours, hierarchy = cv2.findContours(Img.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     contours = sorted(contours, key=cv2.contourArea,reverse=True)
 
 
@@ -67,8 +75,10 @@ while True:
 
     #----------show--------#
     cv2.imshow('Img',Img)
-    cv2.imwrite('/home/austin/data/angle/'+s+'_'+str(a)+'_'+str(i)+'.jpg', img)
-    cv2.imwrite('/home/austin/data/center/'+str(x_min - 340)+'_'+str(i)+'.jpg', img)
+    #cv2.imwrite('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/float_2_d/'+str(angle)+'_'+str(i)+'.jpg', Img)
+    #print('3')
+    cv2.imwrite('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/angle_2/'+s+'_'+str(a)+'_'+str(i)+'.jpg', img)
+    cv2.imwrite('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/center_2/'+str(x_min - 340)+'_'+str(i)+'.jpg', img)
     i += 1
     #time.sleep(1)
 

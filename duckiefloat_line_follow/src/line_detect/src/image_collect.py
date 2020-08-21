@@ -17,7 +17,7 @@ class Collect(object):
         self.img = rospy.Subscriber('img', Image, self.save, queue_size = 1)
     def save(self, data):
         self.IMG = bridge.imgmsg_to_cv2(data, desired_encoding = "passthrough")
-        cv2.imwrite("/home/austin/data/float_1/"+str(self.i)+'.jpg', self.IMG)
+        cv2.imwrite("/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/float_2/"+str(self.i)+'.jpg', self.IMG)
         rospy.loginfo(str(self.i))
         self.i += 1
 
