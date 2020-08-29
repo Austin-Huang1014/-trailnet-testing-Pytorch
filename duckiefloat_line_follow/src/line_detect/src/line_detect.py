@@ -5,20 +5,31 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import time
+import tkinter as tk
 
 #img = cv2.imread('/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data/train_data/S/S_degree_30_0236.jpg',1)
 i = 0
 s = None
-#img = cv2.imread('/home/austin/data/float_1/119.jpg')
+img = cv2.imread('/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/src/data/float_1/119.jpg')
+root = tk.Tk()
+s1 = tk.Scale(root, from_=0, to=255, orient="horizontal")
+#s1.pack()
+s2 = tk.Scale(root, from_=0, to=255, orient="horizontal")
+#s2.pack()
+s3 = tk.Scale(root, from_=0, to=255, orient="horizontal")
+#s3.pack()
 #img = cv2.imread('/home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning/data/Lane_data/train_data/R/R_degree_30_0275.jpg',1)
 while True:
-    img = cv2.imread('/home/austin/data/float_1/'+str(i)+'.jpg')
+    #img = cv2.imread('/home/austin/data/float_1/'+str(i)+'.jpg')
     #----------hsv_trans----------------------#
+    s1.pack()
+    s2.pack()
+    s3.pack()
     Img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     #----------detect blue line------------#
     low_red = np.array([0, 0, 0])
-    up_red = np.array([200, 200, 200])
+    up_red = np.array([s1.get(), s2.get(), s3.get()])
     Img = cv2.inRange(Img, low_red, up_red)
     Img = 255 -Img
     
@@ -67,9 +78,10 @@ while True:
 
     #----------show--------#
     cv2.imshow('Img',Img)
-    cv2.imwrite('/home/austin/data/angle/'+s+'_'+str(a)+'_'+str(i)+'.jpg', img)
-    cv2.imwrite('/home/austin/data/center/'+str(x_min - 340)+'_'+str(i)+'.jpg', img)
+    #cv2.imwrite('/home/austin/data/angle/'+s+'_'+str(a)+'_'+str(i)+'.jpg', img)
+    #cv2.imwrite('/home/austin/data/center/'+str(x_min - 340)+'_'+str(i)+'.jpg', img)
     i += 1
+    root.mainloop()
     #time.sleep(1)
 
     k = cv2.waitKey(30) & 0xff

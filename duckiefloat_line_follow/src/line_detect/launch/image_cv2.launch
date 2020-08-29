@@ -1,0 +1,11 @@
+<launch>
+  <node name="pump_controller" 
+        pkg="line_detect" 
+        type="rgb_set.py" />
+  <node name="img_pub" 
+        pkg="line_detect" 
+        type="image_pub.py" />
+  <node name="image_ana" 
+        pkg="line_detect" 
+        type="image_a_d.py" />
+</launch>
