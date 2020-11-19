@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/austin/trailnet-testing-Pytorch/2020_summer/build"
+export CMAKE_PREFIX_PATH="/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/devel:$CMAKE_PREFIX_PATH"
+export PWD="/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/src:$ROS_PACKAGE_PATH"

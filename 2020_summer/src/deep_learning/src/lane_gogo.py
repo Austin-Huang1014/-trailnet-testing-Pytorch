@@ -20,7 +20,7 @@ from std_msgs.msg import Float64
 
 os.environ['ROS_IP'] = '10.42.0.1'
 bridge = CvBridge()
-weight_path = '/home/sis/HCC_competition_2020/yblane/src/ybfollow/src/yb_lane.pth'
+weight_path = '/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/src/deep_learning/src/yb_lane.pth'
 
 class CNN_Model(nn.Module):
     def __init__(self):
@@ -83,9 +83,12 @@ class CNN_Model(nn.Module):
 class Lane_follow(object):
     def __init__(self):
         self.node_name = rospy.get_name()
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.initial()
         self.omega = 0
         self.count = 0
+        #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.data_transform = transforms.Compose([transforms.ToTensor()]) 
         # motor omega output
         self.Omega = np.array([0.1,0.17,0.24,0.305,0.37,0.44,0.505,0.73,-0.1,-0.17,-0.24,-0.305,-0.37,-0.44,-0.505,-0.73,0.0,0.0])
         rospy.loginfo("[%s] Initializing " % (self.node_name))
@@ -97,6 +100,7 @@ class Lane_follow(object):
     def initial(self):
         self.model = CNN_Model()
         self.model.load_state_dict(torch.load(weight_path))
+        self.model = self.model.to(self.device)
 
        
     # load image to define omega for motor controlling
@@ -111,15 +115,15 @@ class Lane_follow(object):
                 img = bridge.imgmsg_to_cv2(data, desired_encoding = "passthrough")
                 #img = cv2.resize(img, self.dim)
 
-                data_transform = transforms.Compose([
-                    transforms.ToTensor()])
-                img = data_transform(img)
+                #data_transform = transforms.Compose([
+                #    transforms.ToTensor()])
+                img = self.data_transform(img)
                 images = torch.unsqueeze(img,0)
                 
                 
                 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-                images = images.to(device)
-                self.model = self.model.to(device)
+                images = images.to(self.device)
+                self.model = self.model.to(self.device)
                 output = self.model(images)
                 top1 = output.argmax()
                 self.omega = self.Omega[top1]

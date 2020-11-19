@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/austin/trailnet-testing-Pytorch/2020_summer/src
+CMAKE_SOURCE_DIR = /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/austin/trailnet-testing-Pytorch/2020_summer/build
+CMAKE_BINARY_DIR = /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build
 
 # Utility rule file for std_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/build: std_msgs_gene
 .PHONY : deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 
 deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	cd /home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build/deep_learning && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 
 deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/depend:
-	cd /home/austin/trailnet-testing-Pytorch/2020_summer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/austin/trailnet-testing-Pytorch/2020_summer/src /home/austin/trailnet-testing-Pytorch/2020_summer/src/deep_learning /home/austin/trailnet-testing-Pytorch/2020_summer/build /home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning /home/austin/trailnet-testing-Pytorch/2020_summer/build/deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/src /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/src/deep_learning /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build/deep_learning /home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/build/deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : deep_learning/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
 

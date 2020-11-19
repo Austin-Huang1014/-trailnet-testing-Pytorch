@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "deep_learning"
-PROJECT_SPACE_DIR = "/home/austin/trailnet-testing-Pytorch/2020_summer/install"
+PROJECT_SPACE_DIR = "/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/install"
 PROJECT_VERSION = "0.0.0"
