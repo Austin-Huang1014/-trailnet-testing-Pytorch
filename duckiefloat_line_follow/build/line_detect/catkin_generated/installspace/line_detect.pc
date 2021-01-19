@@ -1,8 +1,0 @@
-prefix=/home/austin/trailnet-testing-Pytorch/duckiefloat_line_follow/install
-
-Name: line_detect
-Description: Description of line_detect
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

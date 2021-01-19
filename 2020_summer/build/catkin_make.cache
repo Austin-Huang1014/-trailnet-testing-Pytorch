@@ -1,2 +1,0 @@
-deep_learning
--DCATKIN_DEVEL_PREFIX=/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/devel -DCMAKE_INSTALL_PREFIX=/home/sis/ncsist_threat_processing/trailnet-testing-Pytorch/2020_summer/install -G Unix Makefiles
