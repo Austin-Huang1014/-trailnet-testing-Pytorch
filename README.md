@@ -1,1 +1,1 @@
-# trailnet-testing-Pytorch
+# CNN_application_ros
